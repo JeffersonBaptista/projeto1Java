@@ -3,6 +3,7 @@ package com.br.zup.estacionamento;
 import java.util.Scanner;
 
 import com.br.zup.projeto1Java.modelo.Estacionamento;
+import com.br.zup.projeto1Java.modelo.Veiculos;
 
 public class AppEstacionamento {
 
@@ -11,6 +12,7 @@ public class AppEstacionamento {
 		Scanner scan = entrada();
 
 		Estacionamento estacionamento = new Estacionamento();
+		Veiculos veiculo = new Veiculos();
 		
 		System.out.println("Digite quantidade de vagas para carros no estacionamento");
 		int vagasCarros = scan.nextInt();
@@ -26,6 +28,11 @@ public class AppEstacionamento {
 		System.out.println("Total vagas comum "+ vagasComum);
 		System.out.println("Total vagas idoso "+ vagasIdoso);
 		System.out.println("Total vagas deficiente "+ vagasDeficiente);
+		
+		veiculo = veiculo.cadastraVeiculo();
+	
+		System.out.println(veiculo);
+		
 
 	}
 
