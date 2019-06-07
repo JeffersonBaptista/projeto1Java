@@ -8,6 +8,13 @@ public class Estacionamento {
 	private String tipoVaga ="";
 	private Veiculos veiculos = null;
 	private Catraca catraca = null;
+	
+	
+	
+	
+	public Estacionamento() {
+		super();
+	}
 	public Estacionamento(int vagasComuns, int vagasIdoso, int vagasDeficiente, String tipoVaga, Veiculos veiculos,
 			Catraca catraca) {
 		super();
@@ -55,15 +62,15 @@ public class Estacionamento {
 		this.catraca = catraca;
 	}
 	
-	public int quantidadeVagasIdoso(int vagasTotal) {
+	public int quantidadeVagasIdoso(int vagasCarros) {
 		
-		int vagas = (int) (vagasTotal * 0.05);
+		int vagas = (int) (vagasCarros * 0.05);
 		return vagas;
 		
 	}
-	public int quantidadeVagasDeficiente(int vagasTotal) {
+	public int quantidadeVagasDeficiente(int vagasCarros) {
 		
-		int vagas = (int) (vagasTotal * 0.02);
+		int vagas = (int) (vagasCarros * 0.02);
 		return vagas;
 		
 	}
