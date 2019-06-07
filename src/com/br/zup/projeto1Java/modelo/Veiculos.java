@@ -5,21 +5,17 @@ import java.util.Date;
 public class Veiculos {
 	private String placa = "";
 	private String modelo = "";
-	private String tipoVaga = "";
-	private double horaEntrada = 0;
-	private double horaSaida = 0;
+	private String tipo = "";
 
 	public Veiculos() {
 
 	}
 
-	public Veiculos(String placa, String modelo, String tipoVaga, double horaEntrada, double horaSaida) {
-
+	public Veiculos(String placa, String modelo, String tipo) {
+		super();
 		this.placa = placa;
 		this.modelo = modelo;
-		this.tipoVaga = tipoVaga;
-		this.horaEntrada = horaEntrada;
-		this.horaSaida = horaSaida;
+		this.tipo = tipo;
 	}
 
 	public String getPlaca() {
@@ -38,28 +34,12 @@ public class Veiculos {
 		this.modelo = modelo;
 	}
 
-	public String getTipoVaga() {
-		return tipoVaga;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setTipoVaga(String tipoVaga) {
-		this.tipoVaga = tipoVaga;
-	}
-
-	public double getHoraEntrada() {
-		return horaEntrada;
-	}
-
-	public void setHoraEntrada(double horaEntrada) {
-		this.horaEntrada = horaEntrada;
-	}
-
-	public double getHoraSaida() {
-		return horaSaida;
-	}
-
-	public void setHoraSaida(double horaSaida) {
-		this.horaSaida = horaSaida;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }
