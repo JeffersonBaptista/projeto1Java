@@ -94,29 +94,17 @@ public class Vagas {
 	}
 
 	public void exibirVagas(List<Vagas> listaVagas) {
-	
-		//metodo com erro ainda tenho que corrigir
-		int j;
-		int i;
-		int x =0;
-		String teste ="" ;
 
-		for ( i = 0; i <= listaVagas.size(); i++) {
-			for (j = 0; j < 10; j++) {
-				
-				for (Vagas vagas : listaVagas) {
-					teste += vagas;
-				}
-				System.out.println(teste);
-			}
+		for (Vagas vagas : listaVagas) {
+			System.out.println(vagas);
 		}
 	}
 
 	public String toString() {
-		String modelo = "";
-		modelo += this.getTipoVaga() + "\n";
-		modelo += this.getVeiculos() + "\n";
-		modelo += this.getCatraca() + "\n";
+		String modelo = "____________________\n\n";
+		modelo += this.getTipoVaga() + " - ";
+		modelo += this.getVeiculos() + " - ";
+		modelo += this.getCatraca() + "\n____________________";
 
 		return modelo;
 

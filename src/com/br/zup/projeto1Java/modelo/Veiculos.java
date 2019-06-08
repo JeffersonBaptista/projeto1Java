@@ -46,7 +46,7 @@ public class Veiculos {
 		String modelo = "";
 		modelo += "Placa -> "+ this.getPlaca();
 		modelo += "\nModelo -> "+ this.getModelo();
-		modelo += "\n Tipo -> "+ this.getTipo();
+		modelo += "\nTipo -> "+ this.getTipo();
 		
 		return modelo;
 	}
