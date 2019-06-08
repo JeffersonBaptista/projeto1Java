@@ -1,6 +1,6 @@
 package com.br.zup.projeto1Java.modelo;
 
-import java.util.Date;
+
 import java.util.Scanner;
 
 public class Veiculos {
@@ -51,7 +51,7 @@ public class Veiculos {
 		return modelo;
 	}
 	
-	public static Veiculos cadastraVeiculo() {
+	public Veiculos cadastraVeiculo() {
 		Scanner scan = entrada();
 		
 		System.out.println("Didite a placa");
@@ -68,7 +68,7 @@ public class Veiculos {
 		return veiculo;
 		
 	}
-	public static Scanner entrada() {
+	public Scanner entrada() {
 		Scanner scan = new Scanner(System.in);
 		return scan;
 	}
