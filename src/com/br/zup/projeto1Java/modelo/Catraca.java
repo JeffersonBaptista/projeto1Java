@@ -46,5 +46,7 @@ public class Catraca {
 	public void setPreçoAdicional(double preçoAdicional) {
 		this.preçoAdicional = preçoAdicional;
 	}
+	
+	
 
 }
