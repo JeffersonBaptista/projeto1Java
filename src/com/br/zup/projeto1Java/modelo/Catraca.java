@@ -54,6 +54,7 @@ public class Catraca {
 		this.preçoAdicional = preçoAdicional;
 	}
 	
+	// metodo para organizar a exibição dos atributos da classe
 	public String toString() {
 		String modelo ="";
 		
@@ -63,6 +64,7 @@ public class Catraca {
 		return modelo;
 	}
 
+	// metodo para inserir hora de chegada do veiculo
 	public Catraca inserirHoraEntrada() {
 		Scanner scan = new Scanner(System.in);
 		Catraca novaEntrada = new Catraca();

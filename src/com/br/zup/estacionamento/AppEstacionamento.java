@@ -41,6 +41,7 @@ public class AppEstacionamento {
 		Scanner scan = entrada();
 
 		Vagas vagas = new Vagas();
+		int controle = 1;
 		Veiculos veiculo = new Veiculos();
 
 		System.out.println("Digite quantidade de vagas para carros no estacionamento");
@@ -55,16 +56,26 @@ public class AppEstacionamento {
 
 		listaVagas = vagas.nomeiaVagas(listaVagas, vagasIdoso, vagasDeficiente, vagasComum, vagasMotos);
 
-		
-		
-		vagas.entradaVeiculos(listaVagas);
-		
-		vagas.exibirVagas(listaVagas);
+		while (controle == 1) {
+			Scanner scanIf = entrada();
 
+			System.out.println("Digite 1 para visualizar nossas vagas\n" + "Digite 2 para estacionar um veiculo\n"
+					+ "Digite 3 retirar um veiculo\n" + "digite 4 para sair do sistema");
+			int opcao = scanIf.nextInt();
 
+			if (opcao == 1) {
+				vagas.exibirVagas(listaVagas);
 
-		
-		
+			} else if (opcao == 2) {
+				vagas.entradaVeiculos(listaVagas);
+
+			} else if (opcao == 3) {
+
+			} else if (opcao == 4) {
+				controle = 0;
+			}
+
+		}
 
 	}
 

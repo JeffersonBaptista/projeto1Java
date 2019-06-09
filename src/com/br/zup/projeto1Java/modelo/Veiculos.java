@@ -42,6 +42,7 @@ public class Veiculos {
 		this.tipo = tipo;
 	}
 
+	// metodo para organizar a exibição dos atributos da classe
 	public String toString() {
 		String modelo = "";
 		modelo += "Tipo -> " + this.getTipo();
@@ -51,6 +52,7 @@ public class Veiculos {
 		return modelo;
 	}
 
+	// metodo para cadastrar veiculos
 	public Veiculos cadastraVeiculo() {
 		Scanner scan = entrada();
 
@@ -69,6 +71,7 @@ public class Veiculos {
 
 	}
 
+	// metodo para entrada de dados
 	public Scanner entrada() {
 		Scanner scan = new Scanner(System.in);
 		return scan;
