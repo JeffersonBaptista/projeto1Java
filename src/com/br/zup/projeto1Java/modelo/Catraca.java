@@ -1,5 +1,7 @@
 package com.br.zup.projeto1Java.modelo;
 
+import java.util.Scanner;
+
 public class Catraca {
 
 	private double horaEntrada = 0;
@@ -7,12 +9,17 @@ public class Catraca {
 	private double precoPeríodo = 0;
 	private double preçoAdicional = 0;
 
+
+
 	public Catraca(double horaEntrada, double hotaSaída, double precoPeríodo, double preçoAdicional) {
-		super();
 		this.horaEntrada = horaEntrada;
 		this.hotaSaída = hotaSaída;
 		this.precoPeríodo = precoPeríodo;
 		this.preçoAdicional = preçoAdicional;
+	}
+
+	public Catraca() {
+		
 	}
 
 	public double getHoraEntrada() {
@@ -47,6 +54,24 @@ public class Catraca {
 		this.preçoAdicional = preçoAdicional;
 	}
 	
-	
+	public String toString() {
+		String modelo ="";
+		
+		modelo += "Entrada -> "+this.getHoraEntrada();
+		modelo += "\nSaida -> "+this.getHotaSaída();
+		
+		return modelo;
+	}
+
+	public Catraca inserirHoraEntrada() {
+		Scanner scan = new Scanner(System.in);
+		Catraca novaEntrada = new Catraca();
+		
+		System.out.println("Digite a hora da entrada");
+		double hora = scan.nextDouble();
+		novaEntrada.setHoraEntrada(hora);
+		
+		return novaEntrada;
+	}
 
 }

@@ -1,6 +1,5 @@
 package com.br.zup.projeto1Java.modelo;
 
-
 import java.util.Scanner;
 
 public class Veiculos {
@@ -42,32 +41,34 @@ public class Veiculos {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
 	public String toString() {
 		String modelo = "";
-		modelo += "Placa -> "+ this.getPlaca();
-		modelo += "\nModelo -> "+ this.getModelo();
-		modelo += "\nTipo -> "+ this.getTipo();
-		
+		modelo += "Tipo -> " + this.getTipo();
+		modelo += "\nModelo -> " + this.getModelo();
+		modelo += "\nPlaca -> " + this.getPlaca();
+
 		return modelo;
 	}
-	
+
 	public Veiculos cadastraVeiculo() {
 		Scanner scan = entrada();
-		
-		System.out.println("Didite a placa");
-		String placa = scan.nextLine();
-		
-		System.out.println("Didite o modelo");
-		String modelo = scan.nextLine();
-		
+
 		System.out.println("Didite a tipo do veiculo");
 		String tipo = scan.nextLine();
-		
+
+		System.out.println("Didite a placa");
+		String placa = scan.nextLine();
+
+		System.out.println("Didite o modelo");
+		String modelo = scan.nextLine();
+
 		Veiculos veiculo = new Veiculos(placa, modelo, tipo);
-		
+
 		return veiculo;
-		
+
 	}
+
 	public Scanner entrada() {
 		Scanner scan = new Scanner(System.in);
 		return scan;

@@ -1,6 +1,7 @@
 package com.br.zup.projeto1Java.modelo;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Vagas {
 
@@ -100,10 +101,52 @@ public class Vagas {
 		}
 	}
 
+	public List<Vagas> entradaVeiculos(List<Vagas> listaVagas) {
+		Scanner scan = entrada();
+		Veiculos veiculo = new Veiculos();
+		Catraca entrada = new Catraca();
+
+		System.out.println("Deseja visualisar nossas vagas?\n" + "'S' para sim ou 'N' para não");
+		String opcao = scan.nextLine();
+
+		if (opcao.equalsIgnoreCase("S")) {
+			this.exibirVagas(listaVagas);
+			System.out.println("\n\nAcima estão nossas vagas");
+		} else {
+			System.out.println("Vamos la");
+		}
+
+		System.out.println("Nos diga em qual vaga deseja estacionar o veiculo");
+		String localDesejado = scan.nextLine();
+
+		for (int i = 0; i < listaVagas.size(); i++) {
+			Vagas vaga = listaVagas.get(i);
+
+			if (localDesejado.equalsIgnoreCase(vaga.getTipoVaga()) && vaga.getVeiculos() == null) {
+
+				veiculo = veiculo.cadastraVeiculo();
+				entrada = entrada.inserirHoraEntrada();
+
+				vaga.setVeiculos(veiculo);
+				vaga.setCatraca(entrada);
+
+			} else if (localDesejado.equalsIgnoreCase(vaga.getTipoVaga()) && vaga.getVeiculos() != null) {
+				System.out.println("Vaga não disponivel");
+			}
+		}
+
+		return listaVagas;
+	}
+
+	public Scanner entrada() {
+		Scanner scan = new Scanner(System.in);
+		return scan;
+	}
+
 	public String toString() {
 		String modelo = "____________________\n\n";
-		modelo += this.getTipoVaga() + " - ";
-		modelo += this.getVeiculos() + " - ";
+		modelo += this.getTipoVaga() + "\n";
+		modelo += this.getVeiculos() + "\n";
 		modelo += this.getCatraca() + "\n____________________";
 
 		return modelo;
