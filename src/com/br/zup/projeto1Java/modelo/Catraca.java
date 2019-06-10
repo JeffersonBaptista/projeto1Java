@@ -1,6 +1,7 @@
 package com.br.zup.projeto1Java.modelo;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
 
 public class Catraca {
 
@@ -83,7 +84,7 @@ public class Catraca {
 
 		System.out.println(catraca);
 
-		System.out.println("digite a hora da saida");
+		System.out.println("\ndigite a hora da saida\n");
 		double saida = scan.nextDouble();
 		catraca.setHoraSaída(saida);
 
@@ -94,10 +95,13 @@ public class Catraca {
 		if (permanencia <= 0.15) {
 			valor = 0;
 		} else if (permanencia > 0.15 && permanencia <= 1) {
-			valor = permanencia * catraca.getPrecoPeríodo();
+			valor = catraca.getPrecoPeríodo();
 		} else if (permanencia > 1) {
 
-			valor = catraca.getPrecoPeríodo() + ((permanencia - 1) * catraca.getPreçoAdicional());
+			double hora = Math.ceil(permanencia - 1);
+			int horaAdicional = (int) hora;
+
+			valor = catraca.getPrecoPeríodo() + (horaAdicional * catraca.getPreçoAdicional());
 
 		}
 
@@ -112,5 +116,5 @@ public class Catraca {
 		Scanner scan = new Scanner(System.in);
 		return scan;
 	}
-	
+
 }

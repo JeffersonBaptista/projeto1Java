@@ -161,26 +161,35 @@ public class Vagas {
 
 		System.out.println("Digite o numero da vaga");
 		int numero = scan.nextInt();
+		int i = 0;
 
-		for (Vagas vagas2 : vagas) {
+		for (i = 0; i < vagas.size(); i++) {
+			Vagas vagas2 = vagas.get(i);
+
 			if (vagas2.getTipoVaga().equalsIgnoreCase(tipo) && vagas2.getNumeroVaga() == numero) {
 				veiculo = vagas2.getVeiculos();
 				catraca = vagas2.getCatraca();
-			}
-		}
-		System.out.println(veiculo);
+				
+				System.out.println(veiculo);
 
-		catraca.caculaValor(catraca);
-
-		for (Vagas vagas2 : vagas) {
-			if (vagas2.getTipoVaga().equalsIgnoreCase(tipo) && vagas2.getNumeroVaga() == numero) {
-				vagas2.setVeiculos(null);
-				vagas2.setCatraca(null);
-				;
+				catraca.caculaValor(catraca);
 			}
+
 		}
 
+
+
+		for (
+
+		Vagas vagas3 : vagas) {
+			if (vagas3.getTipoVaga().equalsIgnoreCase(tipo) && vagas3.getNumeroVaga() == numero) {
+				vagas3.setVeiculos(null);
+				vagas3.setCatraca(null);
+
+			}
+		}
 		return vagas;
+
 	}
 
 	// metodo para entrada de dados
