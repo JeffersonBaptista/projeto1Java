@@ -124,27 +124,17 @@ public class Vagas {
 		Veiculos veiculo = new Veiculos();
 		Catraca entrada = new Catraca();
 
-//		System.out.println("Deseja visualisar nossas vagas?\n" + "'S' para sim ou 'N' para não");
-//		String opcao = scan.nextLine();
-//
-//		if (opcao.equalsIgnoreCase("S")) {
-//			this.exibirVagas(listaVagas);
-//			System.out.println("\n\nAcima estão nossas vagas");
-//		} else {
-//			System.out.println("Vamos la");
-//		}
-
-		System.out.println("Nos diga em qual vaga deseja estacionar o veiculo\n"
-				+ "Primeiro o tipo da vaga");			
+		System.out.println("Nos diga em qual vaga deseja estacionar o veiculo\n" + "Primeiro o tipo da vaga");
 		String tipoVaga = scan.nextLine();
-		
+
 		System.out.println("Agora nos informe o numero da vaga");
 		int numero = scan.nextInt();
 
 		for (int i = 0; i < listaVagas.size(); i++) {
 			Vagas vaga = listaVagas.get(i);
 
-			if (tipoVaga.equalsIgnoreCase(vaga.getTipoVaga()) && numero == vaga.getNumeroVaga()&& vaga.getVeiculos() == null) {
+			if (tipoVaga.equalsIgnoreCase(vaga.getTipoVaga()) && numero == vaga.getNumeroVaga()
+					&& vaga.getVeiculos() == null) {
 
 				veiculo = veiculo.cadastraVeiculo();
 				entrada = entrada.inserirHoraEntrada();
@@ -159,33 +149,37 @@ public class Vagas {
 
 		return listaVagas;
 	}
-	
-	//metodo para retirada de veiculo
-	public List<Vagas> retiraVeiculo(List<Vagas> vagas){
+
+	// metodo para retirada de veiculo
+	public List<Vagas> retiraVeiculo(List<Vagas> vagas) {
 		Scanner scan = entrada();
 		Veiculos veiculo = new Veiculos();
 		Catraca catraca = new Catraca();
-		System.out.println("Para retirada do veiculo.\n"
-				+ "Informe o tipo e numero da vaga\n"
-				+ "Digite o tipo da vaga");
+		System.out
+				.println("Para retirada do veiculo.\n" + "Informe o tipo e numero da vaga\n" + "Digite o tipo da vaga");
 		String tipo = scan.nextLine();
-		
+
 		System.out.println("Digite o numero da vaga");
 		int numero = scan.nextInt();
-		
+
 		for (Vagas vagas2 : vagas) {
-			if( vagas2.getTipoVaga().equalsIgnoreCase(tipo)&& vagas2.getNumeroVaga()==numero) {
+			if (vagas2.getTipoVaga().equalsIgnoreCase(tipo) && vagas2.getNumeroVaga() == numero) {
 				veiculo = vagas2.getVeiculos();
 				catraca = vagas2.getCatraca();
 			}
 		}
 		System.out.println(veiculo);
-		
-		
+
 		catraca.caculaValor(catraca);
-		
-		
-		
+
+		for (Vagas vagas2 : vagas) {
+			if (vagas2.getTipoVaga().equalsIgnoreCase(tipo) && vagas2.getNumeroVaga() == numero) {
+				vagas2.setVeiculos(null);
+				vagas2.setCatraca(null);
+				;
+			}
+		}
+
 		return vagas;
 	}
 

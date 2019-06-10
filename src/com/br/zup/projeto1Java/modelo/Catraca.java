@@ -112,4 +112,5 @@ public class Catraca {
 		Scanner scan = new Scanner(System.in);
 		return scan;
 	}
+	
 }
