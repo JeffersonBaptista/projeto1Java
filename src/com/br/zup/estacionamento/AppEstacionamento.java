@@ -70,6 +70,7 @@ public class AppEstacionamento {
 				vagas.entradaVeiculos(listaVagas);
 
 			} else if (opcao == 3) {
+				vagas.retiraVeiculo(listaVagas);
 
 			} else if (opcao == 4) {
 				controle = 0;

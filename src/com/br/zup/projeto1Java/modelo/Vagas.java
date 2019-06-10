@@ -159,6 +159,35 @@ public class Vagas {
 
 		return listaVagas;
 	}
+	
+	//metodo para retirada de veiculo
+	public List<Vagas> retiraVeiculo(List<Vagas> vagas){
+		Scanner scan = entrada();
+		Veiculos veiculo = new Veiculos();
+		Catraca catraca = new Catraca();
+		System.out.println("Para retirada do veiculo.\n"
+				+ "Informe o tipo e numero da vaga\n"
+				+ "Digite o tipo da vaga");
+		String tipo = scan.nextLine();
+		
+		System.out.println("Digite o numero da vaga");
+		int numero = scan.nextInt();
+		
+		for (Vagas vagas2 : vagas) {
+			if( vagas2.getTipoVaga().equalsIgnoreCase(tipo)&& vagas2.getNumeroVaga()==numero) {
+				veiculo = vagas2.getVeiculos();
+				catraca = vagas2.getCatraca();
+			}
+		}
+		System.out.println(veiculo);
+		
+		
+		catraca.caculaValor(catraca);
+		
+		
+		
+		return vagas;
+	}
 
 	// metodo para entrada de dados
 	public Scanner entrada() {
