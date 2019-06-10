@@ -124,7 +124,13 @@ public class Vagas {
 		Veiculos veiculo = new Veiculos();
 		Catraca entrada = new Catraca();
 
-		System.out.println("Nos diga em qual vaga deseja estacionar o veiculo\n" + "Primeiro o tipo da vaga");
+		System.out.println("-----Nomeclatura das vagas----\n" 
+				+ "\n'C' Vagas comuns\n" 
+				+ "'I' Vagas para isosos\n"
+				+ "'D' Vagas para Decifiente\n" 
+				+ "'M' Vagas para motos\n");
+
+		System.out.println("Digite em qual vaga deseja estacionar o veiculo\n" + "Primeiro o tipo da vaga");
 		String tipoVaga = scan.nextLine();
 
 		System.out.println("Agora nos informe o numero da vaga");
@@ -169,15 +175,13 @@ public class Vagas {
 			if (vagas2.getTipoVaga().equalsIgnoreCase(tipo) && vagas2.getNumeroVaga() == numero) {
 				veiculo = vagas2.getVeiculos();
 				catraca = vagas2.getCatraca();
-				
+
 				System.out.println(veiculo);
 
 				catraca.caculaValor(catraca);
 			}
 
 		}
-
-
 
 		for (
 

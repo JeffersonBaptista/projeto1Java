@@ -65,8 +65,7 @@ public class Catraca {
 
 	// metodo para inserir hora de chegada do veiculo
 	public Catraca inserirHoraEntrada() {
-		
-		
+
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		Catraca novaEntrada = new Catraca();
@@ -76,7 +75,6 @@ public class Catraca {
 		novaEntrada.setHoraEntrada(hora);
 
 		return novaEntrada;
-	
 
 	}
 
