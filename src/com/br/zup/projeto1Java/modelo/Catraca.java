@@ -1,7 +1,7 @@
 package com.br.zup.projeto1Java.modelo;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
+//import java.util.regex.Matcher;
 
 public class Catraca {
 
@@ -65,6 +65,9 @@ public class Catraca {
 
 	// metodo para inserir hora de chegada do veiculo
 	public Catraca inserirHoraEntrada() {
+		
+		
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		Catraca novaEntrada = new Catraca();
 
@@ -73,6 +76,7 @@ public class Catraca {
 		novaEntrada.setHoraEntrada(hora);
 
 		return novaEntrada;
+	
 
 	}
 

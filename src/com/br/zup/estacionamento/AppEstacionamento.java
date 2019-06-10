@@ -6,8 +6,6 @@ import java.util.Scanner;
 
 import com.br.zup.projeto1Java.modelo.Vagas;
 
-import com.br.zup.projeto1Java.modelo.Veiculos;
-
 public class AppEstacionamento {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -18,7 +16,6 @@ public class AppEstacionamento {
 
 		Vagas vagas = new Vagas();
 		int controle = 1;
-		Veiculos veiculo = new Veiculos();
 
 		System.out.println("Digite quantidade de vagas para carros no estacionamento");
 		int vagasCarros = scan.nextInt();
