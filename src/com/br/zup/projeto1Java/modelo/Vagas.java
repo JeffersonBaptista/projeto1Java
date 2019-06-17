@@ -1,5 +1,6 @@
 package com.br.zup.projeto1Java.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -52,6 +53,8 @@ public class Vagas {
 	public void setNumeroVaga(int numeroVaga) {
 		this.numeroVaga = numeroVaga;
 	}
+	
+	
 
 	// metodo para calcular quantidade de vagas para idoso
 	public int quantidadeVagasIdoso(int vagasCarros) {
@@ -67,6 +70,29 @@ public class Vagas {
 		int vagas = (int) (vagasCarros * 0.02);
 		return vagas;
 
+	}
+	
+	public List<Vagas> iniciaVagas(){
+		
+		List<Vagas> listaVagas = new ArrayList<Vagas>();
+
+		Scanner scan = entrada();
+
+		Vagas vagas = new Vagas();
+		
+		System.out.println("Digite quantidade de vagas para carros no estacionamento");
+		int vagasCarros = scan.nextInt();
+
+		System.out.println("Digite quantidade de vagas para motos no estacionamento");
+		int vagasMotos = scan.nextInt();
+
+		int vagasIdoso = vagas.quantidadeVagasIdoso(vagasCarros);
+		int vagasDeficiente = vagas.quantidadeVagasDeficiente(vagasCarros);
+		int vagasComum = vagasCarros - (vagasIdoso + vagasDeficiente);
+
+		listaVagas = vagas.nomeiaVagas(listaVagas, vagasIdoso, vagasDeficiente, vagasComum, vagasMotos);
+		
+		return listaVagas;
 	}
 
 	// metodo para listar e nomear vagas
