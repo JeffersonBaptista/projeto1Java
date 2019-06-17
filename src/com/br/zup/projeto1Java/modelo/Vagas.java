@@ -116,6 +116,7 @@ public class Vagas {
 		for (Vagas vagas : listaVagas) {
 			System.out.println(vagas);
 		}
+
 	}
 
 	// metodo para entrada de veiculos
@@ -124,11 +125,8 @@ public class Vagas {
 		Veiculos veiculo = new Veiculos();
 		Catraca entrada = new Catraca();
 
-		System.out.println("-----Nomeclatura das vagas----\n" 
-				+ "\n'C' Vagas comuns\n" 
-				+ "'I' Vagas para isosos\n"
-				+ "'D' Vagas para Decifiente\n" 
-				+ "'M' Vagas para motos\n");
+		System.out.println("-----Nomeclatura das vagas----\n" + "\n'C' Vagas comuns\n" + "'I' Vagas para isosos\n"
+				+ "'D' Vagas para Decifiente\n" + "'M' Vagas para motos\n");
 
 		System.out.println("Digite em qual vaga deseja estacionar o veiculo\n" + "Primeiro o tipo da vaga");
 		String tipoVaga = scan.nextLine();
